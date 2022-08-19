@@ -10,8 +10,8 @@ for (const auto of array) {
         </div>
         <div class="col">
             <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">${auto.name}</h4>
-                <small class="text-muted">${auto.productCount} artículos</small>
+                <h4 class="mb-1">${auto.name} ${auto.currency} ${auto.cost}</h4>
+                <small class="text-muted">${auto.soldCount} artículos</small>
             </div>
             <p class="mb-1">${auto.description}</p>
         </div>
