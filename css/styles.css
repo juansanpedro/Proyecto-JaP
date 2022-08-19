@@ -189,8 +189,24 @@ a.custom-card:hover {
   color: orange;
 }
 
-.text{
+.text , .mt-5{
   text-align: center;
   margin: 15px;
   
+}
+
+#boton{
+  background-color: #0D6EFD;
+  color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#image{
+  width: 400px;
+  margin: 25px;
+}
+
+.es{
+  background-color: #F8F9FA;
 }
