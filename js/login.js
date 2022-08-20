@@ -3,13 +3,13 @@ function validar(){
     let contraseña = document.getElementById("contraseña");
 
     if((email.value.length ===0 )|| (contraseña.value.length ===0)){
-        console.log("Algunos de los campos estan vacios")
+        console.log("Algunos de los campos estan vacios");
     }else{
-        location.href = "http://127.0.0.1:5500/index.html";
+        location.href = "index.html";
     }
 }
 
-let ingreso = document.getElementById("Ingresar")   
+let ingreso = document.getElementById("boton")   
 ingreso.addEventListener("click",function(){
     validar();
 })
