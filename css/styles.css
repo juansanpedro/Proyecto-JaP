@@ -189,10 +189,9 @@ a.custom-card:hover {
   color: orange;
 }
 
-.text , .mt-5{
+.mt-5{
   text-align: center;
   margin: 15px;
-  
 }
 
 #boton{
@@ -207,7 +206,4 @@ a.custom-card:hover {
   margin: 25px;
 }
 
-.es{
-  background-color: #F8F9FA;
-}
 
