@@ -189,7 +189,7 @@ a.custom-card:hover {
   color: orange;
 }
 
-.mt-5{
+.text , .mt-5{
   text-align: center;
   margin: 15px;
 }
