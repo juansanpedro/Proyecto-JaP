@@ -1,4 +1,4 @@
-const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json"; // realizar peticion 
 const container = document.getElementById("container")
 
 function productos(array){
@@ -29,7 +29,7 @@ fetch(URL)
     }
 })
 
-.then(data =>{productos(data.products)})
+.then(data =>{productos(data.products)}) 
 
 /*
 
