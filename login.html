@@ -36,25 +36,29 @@
       height: 35px;
       border-color:#F8F9FA;
       border-radius: 4px;
-      
-    }
+      }
 
-
-  </style>
+      #alertae , #alertac{
+        color: red;
+      }
+</style>
 </head>
 <body>
   <main class="mt-5">
     <div class="container" >
       <img src="./img/login.png" id="image" alt="login">
       <h3><strong>Inicio de Sesión</strong></h3>
+      <br>
       <label for="email">Email</label>
       <br>
       <input type="email" id="email" placeholder="Email" required>
       <br>
+      <p id="alertae"></p>
       <label for="contraseña">Contraseña</label>
       <br>
       <input type="password" id="contraseña" placeholder="Contraseña" required>
       <br>
+      <p id="alertac"></p>
       <input type="submit" id="boton" value="Ingresar">
       </div>
   </main>
@@ -69,15 +73,6 @@
     </div>
   </footer>
   
-  <div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
-    <p>Datos guardados correctamente</p>
-    <button id="ButtonClose" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-
-  <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
-    <p>Los datos ingresados no cumplen con los requisitos solicitados</p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
   <script src="js/login.js"></script>
 </body>
 

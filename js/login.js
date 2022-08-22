@@ -1,19 +1,28 @@
-function showAlertSuccess() {
-    document.getElementById("alert-success").classList.add("show");
+
+
+let alertae = document.getElementById("alertae");
+let alertac = document.getElementById("alertac");
+
+function showAlertError1(){
+    alertae.innerHTML = `<p>ingresa el e-mail</p>` 
+    
+}
+function showAlertError2(){
+    
+    alertac.innerHTML = `<p>ingresa la contraseña</p>` 
 }
 
-function showAlertError() {
-    document.getElementById("alert-danger").classList.add("show");
-}
 
 function validar(){
     let email = document.getElementById("email");
     let contraseña = document.getElementById("contraseña");
 
-    if((email.value.length ===0 )|| (contraseña.value.length ===0)){
-        showAlertError();
+    if((email.value.length ===0 )){
+        showAlertError1();
+    }else if((contraseña.value.length ===0)){
+        showAlertError2();
     }else{
-        location.href = ("http://127.0.0.1:5500/index.html");
+        location.href = ("http://127.0.0.1:5500/index.html");  //si no le funciona prode pone index.html
         showAlertSuccess();
     }
 }
