@@ -39,3 +39,15 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+const email = document.getElementById("email");
+const boton = document.getElementById("boton");
+
+boton.addEventListener("click", (evt) => {
+  // Si tenemos texto ingresado en el input, lo guardamos en el localStorage
+  if (email.value) localStorage.setItem("text", email.value);
+});
+
+let conexion = localStorage.getItem("text")
+let parrafo = document.getElementById("inicio");
+parrafo.innerHTML = `${conexion}`
