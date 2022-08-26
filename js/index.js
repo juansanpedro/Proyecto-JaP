@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+let conexion = localStorage.getItem("usuario")
+let parrafo = document.getElementById("inicio");
+parrafo.innerHTML = `<p>${conexion}</p>`
+
+
+
+
