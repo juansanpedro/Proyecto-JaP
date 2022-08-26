@@ -37,7 +37,7 @@ const boton = document.getElementById("boton");
 
 boton.addEventListener("click", (evt) => {
   // Si tenemos texto ingresado en el input, lo guardamos en el localStorage
-  if (email.value) localStorage.setItem("text", email.value);
+  if (email.value) localStorage.setItem("usuario", email.value);
 });
 
 
