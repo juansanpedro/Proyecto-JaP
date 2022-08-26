@@ -32,10 +32,10 @@ ingresar.addEventListener("click",function(){
     validar();
 })
 
-const inputText = document.getElementById("inputText");
-const buttonText = document.getElementById("buttonText");
+const email = document.getElementById("email");
+const boton = document.getElementById("boton");
 
-buttonText.addEventListener("click", (evt) => {
+boton.addEventListener("click", (evt) => {
   // Si tenemos texto ingresado en el input, lo guardamos en el localStorage
-  if (inputText.value) localStorage.setItem("text", inputText.value);
+  if (email.value) localStorage.setItem("text", email.value);
 });
