@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 let conexion = localStorage.getItem("usuario")
 let parrafo = document.getElementById("inicio");
-parrafo.innerHTML = `<p>${conexion}</p>`
+parrafo.innerHTML = `<li>${conexion}</li>`
 
 
 
