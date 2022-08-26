@@ -22,7 +22,7 @@ function validar(){
     }else if((contraseña.value.length ===0)){
         showAlertError2();
     }else{
-        location.href = "index.html";  //si no le funciona prode pone index.html
+        location.href = "e_comerce.html";  //si no le funciona prode pone index.html
         showAlertSuccess();
     }
 }
