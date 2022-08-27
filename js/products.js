@@ -2,18 +2,18 @@ const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json"; /
 const container = document.getElementById("container")
 
 function productos(array){
-for (const auto of array) {
-    container.innerHTML += `<div onclick="setCatID(${auto.id})" class="list-group-item list-group-item-action cursor-active">
+for (const element of array) {
+    container.innerHTML += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
     <div class="row">
         <div class="col-3">
-            <img src="${auto.image}" alt="${auto.description}" class="img-thumbnail">
+            <img src="${element.image}" alt="${element.description}" class="img-thumbnail">
         </div>
         <div class="col">
             <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">${auto.name} ${auto.currency} ${auto.cost}</h4>
-                <small class="text-muted">${auto.soldCount} artículos</small>
+                <h4 class="mb-1">${element.name} ${element.currency} ${element.cost}</h4>
+                <small class="text-muted">${element.soldCount} artículos</small>
             </div>
-            <p class="mb-1">${auto.description}</p>
+            <p class="mb-1">${element.description}</p>
         </div>
     </div>
 </div>`
