@@ -1,5 +1,7 @@
-const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json"; // realizar peticion 
+let acceso = localStorage.getItem("catID");
+const URL = `${PRODUCTS_URL}${acceso}${EXT_TYPE}` // realizar peticion 
 const container = document.getElementById("container")
+
 
 function productos(array){
 for (const element of array) {
