@@ -30,6 +30,22 @@ fetch(URL)
     console.log("Error")
     }
 })
-
 .then(data =>{productos(data.products)}) 
+
+fetch(URL)
+.then(res=>{
+    if (res.ok) {
+ return res.json()
+    }else{
+    console.log("Error")
+    }
+})
+.then(data =>{sub(data.catName)})
+
+function sub(data){
+    let sub = document.getElementById("sub");
+    sub.innerHTML += `<p>Veras aqui todos los productos de la categoria ${data}</p>` 
+   
+}
+
 
