@@ -48,3 +48,13 @@ function sub(data){
    
 }
 
+console.log("Ordenado según el campo lastname de A-Z: ");
+array
+  .sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  })
+  .forEach((value) => {
+    console.log(`${value.name}`);
+  });
