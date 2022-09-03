@@ -2,8 +2,8 @@ let acceso = localStorage.getItem("catID");
 const URL = `${PRODUCTS_URL}${acceso}${EXT_TYPE}` // realizar peticion 
 const container = document.getElementById("container")
 
-
 function productos(array){
+    arrayProducts= array;
 for (const element of array) {
     container.innerHTML += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
     <div class="row">
@@ -48,13 +48,13 @@ function sub(data){
    
 }
 
-console.log("Ordenado según el campo lastname de A-Z: ");
-array
-  .sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
+let arrayProducts = [];         
+
+console.log("Ascendiente - " +
+  JSON.stringify(arrayProducts.sort((a, b) => {
+    if (a.cost < b.cost) return 1;
+    if (a.cost > b.cost) return -1;
     return 0;
-  })
-  .forEach((value) => {
-    console.log(`${value.name}`);
-  });
+  }))
+);
+
