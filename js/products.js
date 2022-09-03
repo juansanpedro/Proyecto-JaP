@@ -1,6 +1,7 @@
 let acceso = localStorage.getItem("catID");
 const URL = `${PRODUCTS_URL}${acceso}${EXT_TYPE}` // realizar peticion 
 const container = document.getElementById("container")
+let arrayProducts = [];   
 
 function productos(array){
     arrayProducts= array;
@@ -48,13 +49,13 @@ function sub(data){
    
 }
 
-let arrayProducts = [];         
+let sortAsc1 = document.getElementById("sortAsc1");
 
-console.log("Ascendiente - " +
-  JSON.stringify(arrayProducts.sort((a, b) => {
-    if (a.cost < b.cost) return 1;
-    if (a.cost > b.cost) return -1;
-    return 0;
-  }))
-);
+sortAsc1.addEventListener("click",function(){
+    arrayProducts.sort((a, b) =>{
+        if (a.cost < b.cost) return -1;
+        if (a.cost > b.cost) return 1;
+        return 0;
+     });
 
+})
