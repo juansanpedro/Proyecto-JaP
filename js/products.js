@@ -1,10 +1,29 @@
 let acceso = localStorage.getItem("catID");
-const URL = `${PRODUCTS_URL}${acceso}${EXT_TYPE}` // realizar peticion 
-const container = document.getElementById("container")
-let arrayProducts = [];   
+const URL_JS = `${PRODUCTS_URL}${acceso}${EXT_TYPE}`; // realizar peticion 
+const container = document.getElementById("container");
+let array = [];   
 
-function productos(array){
-    arrayProducts= array;
+function sub(data){
+    let sub = document.getElementById("sub");
+    sub.innerHTML = `<p>Veras aqui todos los productos de la categoria ${data.catName}</p>` 
+}
+
+fetch(URL_JS)
+.then(res=>{
+    if (res.ok) {
+ return res.json()
+    }else{
+    console.log("Error")
+    }
+})
+.then(data =>{ 
+    array = data.products;
+    productos();
+    sub(data);
+    
+}) 
+
+function productos(){
 for (const element of array) {
     container.innerHTML += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
     <div class="row">
@@ -23,39 +42,13 @@ for (const element of array) {
 }
 }
 
-fetch(URL)
-.then(res=>{
-    if (res.ok) {
- return res.json()
-    }else{
-    console.log("Error")
-    }
-})
-.then(data =>{productos(data.products)}) 
-
-fetch(URL)
-.then(res=>{
-    if (res.ok) {
- return res.json()
-    }else{
-    console.log("Error")
-    }
-})
-.then(data =>{sub(data.catName)})
-
-function sub(data){
-    let sub = document.getElementById("sub");
-    sub.innerHTML += `<p>Veras aqui todos los productos de la categoria ${data}</p>` 
-   
-}
-
-let sortAsc1 = document.getElementById("sortAsc1");
-
-sortAsc1.addEventListener("click",function(){
-    arrayProducts.sort((a, b) =>{
-        if (a.cost < b.cost) return -1;
-        if (a.cost > b.cost) return 1;
-        return 0;
-     });
-
-})
+ let prueba = document.getElementById("prueba");
+ prueba.addEventListener("click",function(){
+    console.log("funciona");
+  array.sort((a, b) => {
+      if (a.cost < b.cost) {return 1;}
+      if (a.cost > b.cost) {return -1;}
+      return 0;
+    });
+    productos();
+ });
