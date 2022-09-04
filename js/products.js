@@ -1,6 +1,10 @@
 let acceso = localStorage.getItem("catID");
 const URL_JS = `${PRODUCTS_URL}${acceso}${EXT_TYPE}`; // realizar peticion 
 const container = document.getElementById("container");
+const ascendente = document.getElementById("asc");
+const descendente = document.getElementById("desc");
+const relevancia = document.getElementById("rel");
+const ordenando = document.getElementById("ordenando");
 let array = [];   
 
 function sub(data){
