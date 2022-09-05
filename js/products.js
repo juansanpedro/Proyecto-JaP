@@ -11,7 +11,7 @@ let max = document.getElementById("max");
 let min = document.getElementById("min");
 let array = [];
 
-function productos() {
+function productos(){
   let htmlContentToAppend = "";
   for (const element of array) {
     htmlContentToAppend += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
