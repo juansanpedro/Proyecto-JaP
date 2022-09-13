@@ -122,3 +122,8 @@ limpiar.addEventListener("click", function(){
 
     productos();
 });
+
+function setCatID(id) {
+  localStorage.setItem("cat_ID", id);
+  window.location = "product-info.html"
+}
