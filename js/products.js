@@ -123,7 +123,7 @@ limpiar.addEventListener("click", function(){
     productos();
 });
 
-function setCatID(id) {
+function set_CatID(id) {
   localStorage.setItem("cat_ID", id);
   window.location = "product-info.html"
 }
