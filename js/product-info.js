@@ -1,11 +1,11 @@
 let acceso = localStorage.getItem("cat_ID");
-container = document.getElementById("container");
-const URL_INFO = `${PRODUCT_INFO_URL}${acceso}${EXT_TYPE}`;
+const INFO = PRODUCT_INFO_URL + acceso + EXT_TYPE;
 let array = [];
+container = document.getElementById("container");
 
 function juan() {
   let htmlContentToAppend = "";
-  for (i = 0; i< array.length; i++) {
+  for (let i = 0 ; i < array.length; i++) {
     let element = array[i];
     htmlContentToAppend += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
   <div class="row">
@@ -25,8 +25,8 @@ function juan() {
   }
 }
 
-
-fetch(URL_INFO)
+/*document.addEventListener("DOMContentLoaded",function(){
+    fetch(INFO)
   .then((res) => {
     if (res.ok) {
       return res.json();
@@ -35,7 +35,16 @@ fetch(URL_INFO)
     }
   })
   .then((data) => {
-    array = data.products;
+    array = data.res;
     juan();
   });
+})*/
 
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(INFO).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            array = resultObj.data
+            juan();
+        }
+    });
+     })
