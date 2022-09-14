@@ -1,13 +1,13 @@
 let acceso = localStorage.getItem("cat_ID");
 const INFO = PRODUCT_INFO_URL + acceso + EXT_TYPE;
 let array = [];
-container = document.getElementById("container");
+container = document.getElementById("cont");
 
 function juan() {
   let htmlContentToAppend = "";
   for (let i = 0 ; i < array.length; i++) {
     let element = array[i];
-    htmlContentToAppend += ` <p>HOla</p>${element.name}` 
+    htmlContentToAppend += `<h3>${element.name}</h3>` 
     container.innerHTML = htmlContentToAppend;
   }
 }
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(INFO).then(function(resultObj){
         if (resultObj.status === "ok"){
             array = resultObj.data
-            juan();
-        }
+            juan()
+           }
     });
      })
 
