@@ -5,23 +5,22 @@ let array = [];
 
 function juan() {
   let htmlContentToAppend = "";
-  for (let i = 0 ; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     let element = array[i];
-    htmlContentToAppend += `<div>"Hola"</div>` ;
+    htmlContentToAppend += `${element.name}`;
     cont.innerHTML = htmlContentToAppend;
-  }
+}
+  
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(INFO).then(function(resultObj){
-        if (resultObj.status === "ok"){
-            array = resultObj.data
-            juan()
-           }
-    });
-     })
-
-
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(INFO).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      array = resultObj.data;
+      juan();
+    }
+  });
+});
 
 /*document.addEventListener("DOMContentLoaded",function(){
     fetch(INFO)
@@ -37,4 +36,3 @@ document.addEventListener("DOMContentLoaded", function(e){
     juan();
   });
 })*/
-
