@@ -1,31 +1,32 @@
 let info = localStorage.getItem("cat_ID");
 const INFO = PRODUCT_INFO_URL + info + EXT_TYPE;
-cont = document.getElementById("cont");
-let array = [];
+let cont = document.getElementById("cont");
 let lista = [];
-
-function juan() {
-  let htmlContentToAppend = "";
-  for (let i = 0; i < lista.length; i++) {
-    let elemento = lista[i];
-
-    htmlContentToAppend += `<div>${elemento.name}</div>`;
-    cont.innerHTML = htmlContentToAppend;
-  }
-  
-} 
-
 
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
-      juan();
+      juan(lista);
     }
-    console.log();
   });
-  
 });
+
+function juan(elemento) {
+  let htmlContentToAppend = "";
+  htmlContentToAppend += `<div><br><h3>${elemento.name}<br></h3> <hr>
+    <p> <strong> Precio </strong> <br>${elemento.currency} ${elemento.cost}</p>
+    <p> <strong> Descripción </strong> <br>${elemento.description}</p>
+    <p> <strong> Categoria </strong> <br>${elemento.category}</p>
+    <p> <strong> Cantidad Vendidos </strong> <br>${elemento.soldCount}</p>
+    </div>`;
+  cont.innerHTML = htmlContentToAppend;
+}
+
+for (let i = 0; i < imgen.length; i++) {
+  let img = imagen[i];
+  
+}
 
 /*document.addEventListener("DOMContentLoaded",function(){
     fetch(INFO)
