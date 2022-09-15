@@ -9,7 +9,7 @@ let limpiar = document.getElementById("limpiar");
 let filtrar = document.getElementById("filtrar");
 let max = document.getElementById("max");
 let min = document.getElementById("min");
-let array = [];
+let array1 = [];
 
 function productos(){
   let htmlContentToAppend = "";

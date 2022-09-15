@@ -1,25 +1,30 @@
-let acceso = localStorage.getItem("cat_ID");
-const INFO = PRODUCT_INFO_URL + acceso + EXT_TYPE;
+let info = localStorage.getItem("cat_ID");
+const INFO = PRODUCT_INFO_URL + info + EXT_TYPE;
 cont = document.getElementById("cont");
 let array = [];
+let lista = [];
 
 function juan() {
   let htmlContentToAppend = "";
-  for (let i = 0; i < array.length; i++) {
-    let element = array[i];
-    htmlContentToAppend += `${element.name}`;
-    cont.innerHTML = htmlContentToAppend;
-}
-  
-}
+  for (let i = 0; i < lista.length; i++) {
+    let elemento = lista[i];
 
-document.addEventListener("DOMContentLoaded", function (e) {
+    htmlContentToAppend += `<div>${elemento.name}</div>`;
+    cont.innerHTML = htmlContentToAppend;
+  }
+  
+} 
+
+
+document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
-      array = resultObj.data;
+      lista = resultObj.data;
       juan();
     }
+    console.log();
   });
+  
 });
 
 /*document.addEventListener("DOMContentLoaded",function(){
