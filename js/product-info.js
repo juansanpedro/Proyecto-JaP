@@ -10,7 +10,12 @@ function juan(elemento) {
     <p> <strong> Descripción </strong> <br>${elemento.description}</p>
     <p> <strong> Categoria </strong> <br>${elemento.category}</p>
     <p> <strong> Cantidad Vendidos </strong> <br>${elemento.soldCount}</p>
-    <div id="produimg"> <img src="${elemento.images[0]}"> <img src="${elemento.images[1]}"> <img src="${elemento.images[2]}"> <img src="${elemento.images[4]}"> </div> 
+    <p> <strong> Imagenes Ilustrativas </strong><br></p>
+    <div class="col-3 d-flex">
+    <img src="${elemento.images[0]}" alt="${elemento.description}" class="img-thumbnail img">
+    <img src="${elemento.images[1]}" alt="${elemento.description}" class="img-thumbnail img">
+    <img src="${elemento.images[2]}" alt="${elemento.description}" class="img-thumbnail img">
+    <img src="${elemento.images[3]}" alt="${elemento.description}" class="img-thumbnail img">
     </div>`;
   cont.innerHTML = htmlContentToAppend;
 }
