@@ -37,7 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
       lista = resultObj.data;
       for (const comentario of lista) {
         coment.innerHTML += `<li class="list-group-item comments-list">
-        <p class = "comments-list-head"><b>${comentario.user}</b> - ${comentario.dateTime} -<span class="fa fa-star checked"> ${comentario.score}</p><span>
+        <p class = "comments-list-head"><b>${comentario.user}</b> - ${comentario.dateTime}  
+        <span class="fa fa-star ${comentario.score >=1 ? "checked": ""}"></span>
+        <span class="fa fa-star ${comentario.score >=2 ? "checked": ""}"></span>
+        <span class="fa fa-star ${comentario.score >=3 ? "checked": ""}"></span>
+        <span class="fa fa-star ${comentario.score >=4 ? "checked": ""}"></span>
+        <span class="fa fa-star ${comentario.score >=5 ? "checked": ""}"></span>
         <p class = "comments-list-data">${comentario.description}</p>
     </li>`;
       }
@@ -45,24 +50,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*document.addEventListener("DOMContentLoaded",function(){
-    fetch(INFO)
-  .then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      console.log("Error");
-    }
-  })
-  .then((data) => {
-    array = data.res;
-    juan();
-  });
-})
-
-  for (let i = 0; i < imagen.length; i++) {
-  let img = imagen[i];
-
-}
-
-*/
+// Linea 41 a la 45 significa que si es mayor igual chequea y marca 
