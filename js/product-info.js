@@ -5,7 +5,7 @@ let lista = [];
 
 function juan(elemento) {
   for (let i = 0; i < elemento.images.length; i++) {
-    let foto = elemento.images[i];
+    let foto = elemento.images[i]; 
 
     let htmlContentToAppend = "";
     htmlContentToAppend += `<div><br><h3>${elemento.name}<br></h3> <hr>
