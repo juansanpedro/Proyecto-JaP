@@ -1,6 +1,8 @@
 let info = localStorage.getItem("productID");
 const INFO = PRODUCT_INFO_URL + info + EXT_TYPE;
+const COMENT = PRODUCT_INFO_COMMENTS_URL + info + EXT_TYPE;
 let cont = document.getElementById("cont");
+let coment = document.getElementById("coment");
 let lista = [];
 
 function juan(elemento) {
@@ -25,6 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  getJSONData(COMENT).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      lista = resultObj.data;
+      for (const comentario of lista) {
+        coment.innerHTML += `<li class="list-group-item comments-list">
+        <p class = "comments-list-head"><b>${comentario.user}</b> - ${comentario.dateTime} -<span class="fa fa-star checked"> ${comentario.score}</p><span>
+        <p class = "comments-list-data">${comentario.description}</p>
+    </li>`;
+      }
     }
   });
 });
