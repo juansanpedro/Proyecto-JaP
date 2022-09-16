@@ -14,7 +14,7 @@ let array1 = [];
 function productos(){
   let htmlContentToAppend = "";
   for (const element of array) {
-    htmlContentToAppend += `<div onclick="setCatID(${element.id})" class="list-group-item list-group-item-action cursor-active">
+    htmlContentToAppend += `<div onclick="setProductID(${element.id})" class="list-group-item list-group-item-action cursor-active">
     <div class="row">
         <div class="col-3">
             <img src="${element.image}" alt="${element.description}" class="img-thumbnail">
@@ -123,7 +123,7 @@ limpiar.addEventListener("click", function(){
     productos();
 });
 
-function setCatID(id) {
-  localStorage.setItem("cat_ID", id);
+function setProductID(id) {
+  localStorage.setItem("productID", id);
   window.location = "product-info.html"
 }
