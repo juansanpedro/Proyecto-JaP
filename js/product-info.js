@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function juan(elemento) {
+  
   let htmlContentToAppend = "";
   htmlContentToAppend += `<div><br><h3>${elemento.name}<br></h3> <hr>
     <p> <strong> Precio </strong> <br>${elemento.currency} ${elemento.cost}</p>
@@ -21,12 +22,10 @@ function juan(elemento) {
     <p> <strong> Cantidad Vendidos </strong> <br>${elemento.soldCount}</p>
     </div>`;
   cont.innerHTML = htmlContentToAppend;
-}
+  }
 
-for (let i = 0; i < imgen.length; i++) {
-  let img = imagen[i];
-  
-}
+
+
 
 /*document.addEventListener("DOMContentLoaded",function(){
     fetch(INFO)
@@ -41,4 +40,11 @@ for (let i = 0; i < imgen.length; i++) {
     array = data.res;
     juan();
   });
-})*/
+})
+
+  for (let i = 0; i < imagen.length; i++) {
+  let img = imagen[i];
+
+}
+
+*/
