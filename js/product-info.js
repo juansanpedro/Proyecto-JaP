@@ -65,19 +65,28 @@ document.addEventListener("DOMContentLoaded", function () {
 // Linea 41 a la 45 significa que si es mayor igual chequea y marca
 const botoninfo = document.getElementById("botonInfo");
 let cuerpo = document.getElementById("cuerpo");
-let usuario =localStorage.getItem("usuario")
+let usuario = localStorage.getItem("usuario");
+
+
 
 const fecha = new Date().toLocaleString();
 
 botoninfo.addEventListener("click", (evt) => {
   if (cuerpo.value) localStorage.setItem("com", cuerpo.value);
-});
+  if (puntaje.value) localStorage.setItem("punt", cuerpo.value);
 
+});
+let puntaje = document.getElementById("puntaje");
 
 let conexionComentario = localStorage.getItem("com");
 let listacoment = document.getElementById("coment");
 
 listacoment.innerHTML = `<li class="list-group-item comments-list">
-  <p class = "comments-list-head"><b>${usuario}</b> - ${fecha} 
-  <p class = "comments-list-description">${conexionComentario.description}</p>
+  <p class = "comments-list-head"><b>${usuario}</b> - ${fecha} -
+    <span class="fa fa-star ${puntaje.score >= 1 ? "checked" : ""}"></span>
+      <span class="fa fa-star ${puntaje.score >= 2 ? "checked" : ""}"></span>
+        <span class="fa fa-star ${puntaje.score >= 3 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${puntaje.score >= 4 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${puntaje.score >= 5 ? "checked" : ""}"></span>
+  <p class = "comments-list-description">${conexionComentario}</p>
     </li>`;
