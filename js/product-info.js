@@ -37,12 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
       lista = resultObj.data;
       for (const comentario of lista) {
         coment.innerHTML += `<li class="list-group-item comments-list">
-        <p class = "comments-list-head"><b>${comentario.user}</b> - ${comentario.dateTime}  
-        <span class="fa fa-star ${comentario.score >=1 ? "checked": ""}"></span>
-        <span class="fa fa-star ${comentario.score >=2 ? "checked": ""}"></span>
-        <span class="fa fa-star ${comentario.score >=3 ? "checked": ""}"></span>
-        <span class="fa fa-star ${comentario.score >=4 ? "checked": ""}"></span>
-        <span class="fa fa-star ${comentario.score >=5 ? "checked": ""}"></span>
+        <p class = "comments-list-head"><b>${comentario.user}</b> - ${
+          comentario.dateTime
+        }  
+        <span class="fa fa-star ${
+          comentario.score >= 1 ? "checked" : ""
+        }"></span>
+        <span class="fa fa-star ${
+          comentario.score >= 2 ? "checked" : ""
+        }"></span>
+        <span class="fa fa-star ${
+          comentario.score >= 3 ? "checked" : ""
+        }"></span>
+        <span class="fa fa-star ${
+          comentario.score >= 4 ? "checked" : ""
+        }"></span>
+        <span class="fa fa-star ${
+          comentario.score >= 5 ? "checked" : ""
+        }"></span>
         <p class = "comments-list-data">${comentario.description}</p>
     </li>`;
       }
@@ -50,4 +62,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Linea 41 a la 45 significa que si es mayor igual chequea y marca 
+// Linea 41 a la 45 significa que si es mayor igual chequea y marca
+const botoninfo = document.getElementById("botonInfo");
+let cuerpo = document.getElementById("cuerpo");
+let usuario =localStorage.getItem("usuario")
+
+const fecha = new Date().toLocaleString();
+
+botoninfo.addEventListener("click", (evt) => {
+  if (cuerpo.value) localStorage.setItem("com", cuerpo.value);
+});
+
+
+let conexionComentario = localStorage.getItem("com");
+let listacoment = document.getElementById("coment");
+
+listacoment.innerHTML = `<li class="list-group-item comments-list">
+  <p class = "comments-list-head"><b>${usuario}</b> - ${fecha} 
+  <p class = "comments-list-description">${conexionComentario.description}</p>
+    </li>`;
