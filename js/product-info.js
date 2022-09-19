@@ -62,26 +62,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Linea 41 a la 45 significa que si es mayor igual chequea y marca
 const botoninfo = document.getElementById("botonInfo");
 let cuerpo = document.getElementById("cuerpo");
-let usuario = localStorage.getItem("usuario");
 
+let usuario = localStorage.getItem("usuario"); //desafiate
 
-
-const fecha = new Date().toLocaleString();
+const fecha = new Date().toLocaleString(); //desafiate
 
 botoninfo.addEventListener("click", (evt) => {
-  if (cuerpo.value) localStorage.setItem("com", cuerpo.value);
-  if (puntaje.value) localStorage.setItem("punt", cuerpo.value);
+  if (cuerpo.value) localStorage.setItem("com", cuerpo.value); //desafiate
+  if (puntaje.value) localStorage.setItem("punt", cuerpo.value); //desafiate
 
 });
-let puntaje = document.getElementById("puntaje");
+let puntaje = document.getElementById("puntaje"); //desafiate
 
-let conexionComentario = localStorage.getItem("com");
-let listacoment = document.getElementById("coment");
+let conexionComentario = localStorage.getItem("com"); //desafiate
+let listacoment = document.getElementById("coment"); //desafiate
 
-listacoment.innerHTML = `<li class="list-group-item comments-list">
+//desafiate
+listacoment.innerHTML = `<li class="list-group-item comments-list"> 
   <p class = "comments-list-head"><b>${usuario}</b> - ${fecha} -
     <span class="fa fa-star ${puntaje.score >= 1 ? "checked" : ""}"></span>
       <span class="fa fa-star ${puntaje.score >= 2 ? "checked" : ""}"></span>
