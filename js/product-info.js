@@ -22,11 +22,29 @@ function juan(elemento) {
   cont.innerHTML = htmlContentToAppend;
 }
 
+let relacion = document.getElementById("relacion");
+
+function rel() {
+  let htmlContentToAppend = "";
+  for (const rela of lista.relatedProducts) {
+    htmlContentToAppend += `<div class="list-group-item list-group-item-action">
+    <div class="row">
+        <div class="col-3">
+            <img src="${rela.image}" class="img-thumbnail">
+            <p class="mb-1">${rela.name}</p>
+        </div>
+    </div>
+</div>`;
+    relacion.innerHTML = htmlContentToAppend;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
+      rel(lista);
     }
   });
 });
@@ -62,8 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const botoninfo = document.getElementById("botonInfo");
-let cuerpo = document.getElementById("cuerpo");
+const botoninfo = document.getElementById("botonInfo"); //desafiate
+let cuerpo = document.getElementById("cuerpo"); //desafiate
 
 let usuario = localStorage.getItem("usuario"); //desafiate
 
@@ -72,7 +90,6 @@ const fecha = new Date().toLocaleString(); //desafiate
 botoninfo.addEventListener("click", (evt) => {
   if (cuerpo.value) localStorage.setItem("com", cuerpo.value); //desafiate
   if (puntaje.value) localStorage.setItem("punt", cuerpo.value); //desafiate
-
 });
 let puntaje = document.getElementById("puntaje"); //desafiate
 
@@ -85,7 +102,11 @@ listacoment.innerHTML = `<li class="list-group-item comments-list">
     <span class="fa fa-star ${puntaje.score >= 1 ? "checked" : ""}"></span>
       <span class="fa fa-star ${puntaje.score >= 2 ? "checked" : ""}"></span>
         <span class="fa fa-star ${puntaje.score >= 3 ? "checked" : ""}"></span>
-          <span class="fa fa-star ${puntaje.score >= 4 ? "checked" : ""}"></span>
-          <span class="fa fa-star ${puntaje.score >= 5 ? "checked" : ""}"></span>
+          <span class="fa fa-star ${
+            puntaje.score >= 4 ? "checked" : ""
+          }"></span>
+          <span class="fa fa-star ${
+            puntaje.score >= 5 ? "checked" : ""
+          }"></span>
   <p class = "comments-list-description">${conexionComentario}</p>
     </li>`;
