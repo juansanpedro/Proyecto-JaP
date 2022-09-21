@@ -28,12 +28,10 @@ function rel() {
   let htmlContentToAppend = "";
   for (const rela of lista.relatedProducts) {
     htmlContentToAppend += `<div class="list-group-item list-group-item-action">
-    <div class="row">
         <div class="col-3">
             <img src="${rela.image}" class="img-thumbnail">
-            <p class="mb-1">${rela.name}</p>
+            <p class="mb-1"> ${rela.name}</p>
         </div>
-    </div>
 </div>`;
     relacion.innerHTML = htmlContentToAppend;
   }
