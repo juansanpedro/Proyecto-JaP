@@ -27,12 +27,12 @@ let relacion = document.getElementById("relacion");
 function rel() {
   let htmlContentToAppend = "";
   for (const rela of lista.relatedProducts) {
-    htmlContentToAppend += `<div class="list-group-item list-group-item-action">
-        <div class="col-3">
-            <img src="${rela.image}" class="img-thumbnail">
-            <p class="mb-1"> ${rela.name}</p>
-        </div>
-</div>`;
+    htmlContentToAppend += `<div class="col-md-4"  >
+    <div class="card mb-4 shadow-sm custom-card  list-group-item-action cursor-active">
+    <img class="bd-placeholder-img card-img-top" src="${rela.image}"  class="img-thumbnail">
+    <p class="m-3">${rela.name}</p>
+    </div>
+    </div>`;
     relacion.innerHTML = htmlContentToAppend;
   }
 }
