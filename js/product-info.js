@@ -37,7 +37,9 @@ function rel() {
     </div>`;
     relacion.innerHTML = htmlContentToAppend;
   }
-}
+}     
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
@@ -79,6 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+
+
+
+
+
 
 const botoninfo = document.getElementById("botonInfo"); //desafiate
 let cuerpo = document.getElementById("cuerpo"); //desafiate
