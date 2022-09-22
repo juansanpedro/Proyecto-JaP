@@ -22,8 +22,10 @@ function juan(elemento) {
   cont.innerHTML = htmlContentToAppend;
 }
 
+// Entrega 4
 let relacion = document.getElementById("relacion");
 
+// Entrega 4
 function rel() {
   let htmlContentToAppend = "";
   for (const rela of lista.relatedProducts) {
@@ -37,12 +39,16 @@ function rel() {
   }
 }
 
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
-      rel(lista);
+      rel(lista); // Entrega 4
     }
   });
 });
@@ -77,6 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+
+
+
+
+
 
 const botoninfo = document.getElementById("botonInfo"); //desafiate
 let cuerpo = document.getElementById("cuerpo"); //desafiate
