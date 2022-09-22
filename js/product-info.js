@@ -29,7 +29,7 @@ let relacion = document.getElementById("relacion");
 function rel() {
   let htmlContentToAppend = "";
   for (const rela of lista.relatedProducts) {
-    htmlContentToAppend += `<div class="col-md-4"  >
+    htmlContentToAppend += `<div class="col-md-4">
     <div class="card mb-4 list-group-item-action cursor-active">
     <img class="bd-placeholder-img card-img-top" src="${rela.image}" class="img-thumbnail">
     <p class="m-3">${rela.name}</p>
@@ -41,14 +41,13 @@ function rel() {
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
       rel(lista); // Entrega 4
+    
     }
   });
 });
