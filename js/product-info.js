@@ -37,16 +37,14 @@ function rel() {
     </div>`;
     relacion.innerHTML = htmlContentToAppend;
   }
-}     
-
-
+}    
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
       rel(lista); // Entrega 4
-      rel()
+      
     }
   });
 });
