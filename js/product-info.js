@@ -22,6 +22,7 @@ function juan(elemento) {
   cont.innerHTML = htmlContentToAppend;
 }
 
+
 // Entrega 4
 let relacion = document.getElementById("relacion");
 
@@ -38,13 +39,15 @@ function rel() {
     relacion.innerHTML = htmlContentToAppend;
   }
 }    
+
+
 document.addEventListener("DOMContentLoaded", function () {
   getJSONData(INFO).then(function (resultObj) {
     if (resultObj.status === "ok") {
       lista = resultObj.data;
       juan(lista);
       rel(lista); // Entrega 4
-      
+      red();
     }
   });
 });
