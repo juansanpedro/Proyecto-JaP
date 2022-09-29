@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 let conexion = localStorage.getItem("usuario")
-let parrafo = document.getElementById("inicio");
-parrafo.innerHTML = `<div class="btn-group">
-<button type="button" class="btn btn-warning">${conexion} </button>
+let parrafo = document.getElementById("inicio"); //entrega 4
+parrafo.innerHTML = `<div class="btn-group">  
+<button type="button" class="btn btn-warning">${conexion} </button>  
 <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
   <span class="visually-hidden">Toggle Dropdown</span>
 </button>
