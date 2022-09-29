@@ -24,7 +24,7 @@ function juan(elemento) {
 
 // Entrega 4
 function cargarRelacionados(id){
-  localStorage.setItem("prodID", id);
+  localStorage.setItem("productID", id);
   window.location = "product-info.html"
 }
 
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
       lista = resultObj.data;
       juan(lista);
       rel(lista); // Entrega 4
-      red();
     }
   });
 });
