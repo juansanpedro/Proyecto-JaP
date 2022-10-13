@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
 const botoninfo = document.getElementById("botonInfo"); //desafiate
 let cuerpo = document.getElementById("cuerpo"); //desafiate
 
@@ -118,3 +120,4 @@ listacoment.innerHTML = `<li class="list-group-item comments-list">
           }"></span>
   <p class = "comments-list-description">${conexionComentario}</p>
     </li>`;
+
