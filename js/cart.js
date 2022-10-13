@@ -1,5 +1,11 @@
-let cart = localStorage.getItem("");
-URL_CART = CART_INFO_URL ;
+let cart = localStorage.getItem("user");
+URL_CART = CART_INFO_URL + cart + EXT_TYPE ;
+
+ function cargarCarrito(id){
+    localStorage.setItem("user", id);
+    window.location = "cart.html"
+  }
+  
 
 function rel() {
     let htmlContentToAppend = "";
@@ -9,6 +15,10 @@ function rel() {
       relacion.innerHTML = htmlContentToAppend;
     }
   }   
+
+ 
+
+
   document.addEventListener("DOMContentLoaded", function () {
     getJSONData(URL_CART).then(function (resultObj) {
       if (resultObj.status === "ok") {
