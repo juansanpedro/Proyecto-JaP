@@ -38,9 +38,3 @@ function Carrito(data) {
   }
 }
 
-
-function calculo(total,precio,cant){
-	total = precio*cant;
-  
-
-}
