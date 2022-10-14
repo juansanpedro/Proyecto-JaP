@@ -30,7 +30,7 @@ function Carrito(data) {
         <td><img style="width: 65px; height: 40px;"  class="img-fluid" src="${item.image}"></td>
         <td>${item.name}</td>
         <td>${item.currency} ${item.unitCost}</td>
-        <td> <input type="number"style="width:70px"></td>
+        <td> <input id="cant" type="number"style="width:70px"></td>
         <td><strong>${item.currency} ${item.unitCost}</strong></td>
       </tr>`
     ;
@@ -38,3 +38,14 @@ function Carrito(data) {
   }
 }
 
+let cant = document.getElementById("cant");
+	
+function calculo(cantidad,precio,inputtext,totaltext){
+	
+  
+	subtotal = item.unitCost*cant;
+	inputtext.value=subtotal;
+	
+	total = eval(totaltext.value);
+	totaltext.value = total + subtotal;
+}
