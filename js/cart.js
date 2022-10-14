@@ -38,14 +38,9 @@ function Carrito(data) {
   }
 }
 
-let cant = document.getElementById("cant");
-	
-function calculo(cantidad,precio,inputtext,totaltext){
-	
+
+function calculo(total,precio,cant){
+	total = precio*cant;
   
-	subtotal = item.unitCost*cant;
-	inputtext.value=subtotal;
-	
-	total = eval(totaltext.value);
-	totaltext.value = total + subtotal;
+
 }
