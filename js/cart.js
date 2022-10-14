@@ -14,13 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function Carrito(data) {
   let htmlContentToAppend = "";
-  for (const item of data.articles) {
-    htmlContentToAppend += `<div onclick="cargarRelacionados(${item.id})" class="col-md-4">
+  for (const cart of data.articles) {
+    htmlContentToAppend += `<div (${cart.id})" class="col-md-4">
     <div class="card mb-4 list-group-item-action cursor-active">
-    <img class="bd-placeholder-img card-img-top" src="${item.image}" class="img-thumbnail">
-    <p class="m-3">${item.name}</p>
+    <img class="bd-placeholder-img card-img-top" src="${cart.image}" class="img-thumbnail">
+    <p class="m-3">${cart.name}</p>
      </div>
-    </div>`;
+    </div>`
+    ;
     contenedor.innerHTML = htmlContentToAppend;
   }
 }
