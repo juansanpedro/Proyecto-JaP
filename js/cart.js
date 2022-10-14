@@ -30,7 +30,7 @@ function Carrito(data) {
         <td><img style="width: 65px; height: 40px;"  class="img-fluid" src="${item.image}"></td>
         <td>${item.name}</td>
         <td>${item.currency} ${item.unitCost}</td>
-        <td> <input class="number"style="width:70px"></td>
+        <td> <input type="number"style="width:70px"></td>
         <td><strong>${item.currency} ${item.unitCost}</strong></td>
       </tr>`
     ;
