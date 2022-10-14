@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function Carrito(data) {
   let htmlContentToAppend = "";
   for (const item of data.articles) {
-    htmlContentToAppend += `<table class="table table-dark">
+    htmlContentToAppend += ` <table class="table table-dark"> <br>
     <thead>
       <tr>
         <th scope="col"></th>
@@ -27,10 +27,10 @@ function Carrito(data) {
     </thead>
     <tbody>
       <tr>
-        <td><img src="${item.image}"></td>
+        <td><img style="width: 65px; height: 40px;"  class="img-fluid" src="${item.image}"></td>
         <td>${item.name}</td>
         <td>${item.currency} ${item.unitCost}</td>
-        <td> <input class="number whi"></td>
+        <td> <input class="number" style="width:70px"></td>
         <td><strong>${item.currency} ${item.unitCost}</strong></td>
       </tr>`
     ;
