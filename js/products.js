@@ -28,7 +28,7 @@ function productos(){
         </div>
     </div>
 </div>`;
-container.innerHTML = htmlContentToAppend;
+container.innerHTML = htmlContentToAppend; 
   }
 }
 
