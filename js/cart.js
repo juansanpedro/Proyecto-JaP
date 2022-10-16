@@ -25,10 +25,10 @@ function Carrito(array) {
     </thead>
     <tbody>
                 <tr>
-                    <td><img src="${carts.image}" style="width: 65px; height: 40px;"  class="img-fluid"</td>
+                    <td><img src="${carts.image}" style="width: 65px; height: 40px;" class="img-fluid"</td>
                     <td>${carts.name}</td>
                     <td>${carts.currency}${carts.unitCost}</td>
-                    <td><input id="cant" oninput="subTotal(${carts.unitCost})"type="number" class="InputCtd"></td>
+                    <td><input id="cant" oninput="subTotal(${carts.unitCost})"type="number" style="width:70px"></td>
                     <td><b><p>${carts.currency}<span id="resultado">${carts.unitCost}</p></b></td>
                     <div>
                 </tr>
@@ -40,7 +40,7 @@ function Carrito(array) {
 }
 
 function subTotal(precio) {
-  let ctd = document.getElementById("cant").value;
-  resultado = precio * ctd;
+  let cant = document.getElementById("cant").value;
+  resultado = precio * cant;
   return (document.getElementById("resultado").innerHTML = resultado);
 }
