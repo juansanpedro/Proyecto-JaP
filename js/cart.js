@@ -29,11 +29,9 @@ function Carrito(array) {
                     <td>${carts.name}</td>
                     <td>${carts.currency}${carts.unitCost}</td>
                     <td><input id="cant" oninput="subTotal(${carts.unitCost})"type="number" style="width:70px"></td>
-                    <td><b><p>${carts.currency}<span id="resultado">${carts.unitCost}</p></b></td>
-                    <div>
+                    <td><b>${carts.currency}<span id="resultado">${carts.unitCost}</b></td>
                 </tr>
             </table>
-    </div>
     `;
   }
   contenido.innerHTML = htmlContentToAppend;
