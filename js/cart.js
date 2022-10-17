@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function Carrito(array) {
   let htmlContentToAppend = "";
   for (let carts of array) {
-    htmlContentToAppend += `<table class="table table-dark"> <br>
+    htmlContentToAppend += `<table class="table"> <br>
     <thead>
       <tr>
         <th scope="col"></th>
