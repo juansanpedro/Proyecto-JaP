@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (resultObj.status == "ok") {
       CartObj = resultObj.data;
       Carrito(CartObj.articles);
-      hola();
+      
     }
   });
 });
@@ -61,9 +61,3 @@ function checkedd(precio) {
 
  let aca = document.getElementById("aca");
 
-
- function hola() {
-  htmlContentToAppend = "";
-  htmlContentToAppend += `<p> id="hola"> </p> `;
-aca.innerHTML = htmlContentToAppend;
-}
