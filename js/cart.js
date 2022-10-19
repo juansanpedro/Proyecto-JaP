@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (resultObj.status == "ok") {
       CartObj = resultObj.data;
       Carrito(CartObj.articles);
+      hola();
     }
   });
 });
+
 function Carrito(array) {
   let htmlContentToAppend = "";
   for (let carts of array) {
@@ -41,4 +43,27 @@ function subTotal(precio) {
   let cant = document.getElementById("cant").value;
   resultado = precio * cant;
   return (document.getElementById("resultado").innerHTML = resultado);
+}
+
+
+// entrega 6
+const premium = document.getElementById("envpremium");
+const express = document.getElementById("envexpress");
+const standard = document.getElementById("envstandard");
+
+
+function checkedd(precio) {
+  let cant = document.getElementById("cant").value;
+  final  = precio * cant;
+  return (document.getElementById("hola").innerHTML = final);
+
+}
+
+ let aca = document.getElementById("aca");
+
+
+ function hola() {
+  htmlContentToAppend = "";
+  htmlContentToAppend += `<p> id="hola"> </p> `;
+aca.innerHTML = htmlContentToAppend;
 }
