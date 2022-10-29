@@ -54,9 +54,7 @@ function Carrito(array) {
   </li>
 </ul>
 <br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal">
-    Agregar Metodo de pago
-  </button>
+
 
    `
     ;
