@@ -42,7 +42,7 @@ function Carrito(array) {
    <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Subtotal del producto (U$D)
-    <span class="badge bg-primary rounded-pill" id="costoss">${carts.unitCost}</span>
+    <span class="badge bg-primary rounded-pill" id="costos">${carts.unitCost}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Costo del envio (U$D)
