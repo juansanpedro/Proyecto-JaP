@@ -70,22 +70,3 @@ function subTotal(precio) {
   return (document.getElementById("resultado").innerHTML = resultado);
 }
 
-const envio = document.getElementById("envios")
-
-  function calcular_envio() {
-    let subtotal = Number(document.getElementById("resultado").textContent)
-    let indice = opciones.selectedIndex
-    if (indice == 1)
-      envio.innerHTML = subtotal * 0.15
-    else if (indice == 2)
-      envio.innerHTML = subtotal * 0.07
-    else if (indice == 3)
-      envio.innerHTML = subtotal * 0.05
-  }
-
-  const opciones = document.getElementById("selector")
-  
-  opciones.addEventListener("click", () => {
-    calcular_envio();
-    subTotal();
-  })
