@@ -47,13 +47,13 @@
         <hr>
     <div class="container">
       <h5>Tipo de envío</h5>
-      <form>
+      <form id="selector">
         <br>        
-        <input name="envio" type="radio" id="enpremium" value="0.15" checked="checked" />Premium 2 a 5 dias (15%)       
+        <input name="envio" type="radio" id="enpremium" value="" checked="checked" />Premium 2 a 5 dias (15%)       
         <br>       
-        <input name="envio" type="radio" id="enexpress" value="0.07" />Express 5 a 8 dias (7%)      
+        <input name="envio" type="radio" id="enexpress" value="" />Express 5 a 8 dias (7%)      
         <br>      
-        <input name="envio" type="radio" id="enstandard" value="0.05"  />Standard 12 a 15 dias (5%)      
+        <input name="envio" type="radio" id="enstandard" value=""  />Standard 12 a 15 dias (5%)      
         </form>
     </div>
     <br>
@@ -63,22 +63,29 @@
       <h6>Calle</h6>
       <div class="row">
       <div class="col-5">
-        <input type="text" class="form-control" id="calle">
+        <input type="text" class="form-control" id="calle" required>
       </div>
       <br>
       <br>
       <h6>Número</h6>
       <div class="col-4">
-        <input type="text" class="form-control" id="numero">
+        <input type="text" class="form-control" id="numero" required>
       </div>
       <br>
       <br>
       <h6>Esquina</h6>
       <div class="col-5">
-        <input type="text" class="form-control" id="esquina">
+        <input type="text" class="form-control" id="esquina" required>
       </div>
     </div>
   </div>
+  <div class="container">
+    <br>
+    <h3>Costos</h3>
+    <br>
+    <div class="container" id="costos"></div>
+  </div>
+  
   
   </main>
   <footer class="text-muted">
