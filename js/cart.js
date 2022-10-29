@@ -39,7 +39,7 @@ function Carrito(array) {
 
     `
      costos.innerHTML += ` 
-   <ul class="list-group">
+   <ul class="list-group" >
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Subtotal del producto (U$D)
     <span class="badge bg-primary rounded-pill" id="costos">${carts.unitCost}</span>
@@ -54,9 +54,7 @@ function Carrito(array) {
   </li>
 </ul>
 <br>
-
-
-   `
+ `
     ;
   }
   contenido.innerHTML = htmlContentToAppend;
