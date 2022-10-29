@@ -68,5 +68,6 @@ function subTotal(precio) {
   let cant = document.getElementById("cant").value;
   resultado = precio * cant;
   return (document.getElementById("resultado").innerHTML = resultado);
+  
 }
 
