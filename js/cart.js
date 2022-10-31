@@ -38,6 +38,8 @@ function Carrito(array) {
             </table>
 
     `
+   
+
      costos.innerHTML += ` 
    <ul class="list-group" >
   <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -54,16 +56,43 @@ function Carrito(array) {
   </li>
 </ul>
 <br>
- `
-    ;
+ `;
+ 
   }
   contenido.innerHTML = htmlContentToAppend;
+  
 }
-
+ 
 function subTotal(precio) {
   let cant = document.getElementById("cant").value;
   resultado = precio * cant;
   return (document.getElementById("resultado").innerHTML = resultado);
-  
+}
+
+let envio = document.getElementById("envio");
+let opciones = document.getElementById("select");
+
+
+function calcular_envio() {
+  let subtotal = Number(document.getElementById("resultado").textContent)
+  let indice = opciones.selectedIndex
+  if (indice == 1)
+    envio.innerHTML = subtotal * 0.15
+  else if (indice == 2)
+    envio.innerHTML = subtotal * 0.07
+  else if (indice == 3)
+    envio.innerHTML = subtotal * 0.05
+}
+
+
+opciones.addEventListener("click", () => {
+  calcular_envio();
+  sumar_total() 
+})
+
+function sumar_total() {
+  let subtotal = Number(document.getElementById("subtotal").textContent)
+  const total = document.getElementById("total")
+  total.innerHTML = subtotal + Number(envio.textContent)
 }
 
