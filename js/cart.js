@@ -1,7 +1,14 @@
 const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
-let contenido = document.getElementById("car");
-// Entrega 6
 
+// getElementById necesarios
+const lista = document.getElementById("selector")
+const tarjeta = document.getElementById("flexRadioDefault1")
+const transferencia = document.getElementById("flexRadioDefault2")
+const numero_cuenta = document.getElementById("numero_cuenta")
+const numero_tarjeta = document.getElementById("numero_tarjeta")
+const codigo_seguridad = document.getElementById("codigo_seguridad")
+const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta")
+const boton_guardar = document.getElementById("boton_guardar")
 
 const tabla = document.getElementById("tabla")
 const costos = document.getElementById("costos")
@@ -88,17 +95,7 @@ function calcular_costo(parametro1, parametro2) {
   costoss.innerHTML = parametro1 * parametro2
 }
 
-const lista = document.getElementById("selector")
 
-
-
-const tarjeta = document.getElementById("flexRadioDefault1")
-const transferencia = document.getElementById("flexRadioDefault2")
-const numero_cuenta = document.getElementById("numero_cuenta")
-const numero_tarjeta = document.getElementById("numero_tarjeta")
-const codigo_seguridad = document.getElementById("codigo_seguridad")
-const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta")
-const boton_guardar = document.getElementById("boton_guardar")
 
 function chequear() {
   if (tarjeta.checked) {
