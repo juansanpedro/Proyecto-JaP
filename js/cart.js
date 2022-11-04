@@ -1,50 +1,42 @@
-const URL_CART =
-  "https://japceibal.github.io/emercado-api/user_cart/25801.json";
+const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
 let contenido = document.getElementById("car");
+// Entrega 6
 
-let costos = document.getElementById("costos"); // Entrega 6
 
-document.addEventListener("DOMContentLoaded", function () {
-  getJSONData(URL_CART).then(function (resultObj) {
-    if (resultObj.status == "ok") {
-      CartObj = resultObj.data;
-      Carrito(CartObj.articles);
-      
-    }
-  });
-});
+const tabla = document.getElementById("tabla")
+const costos = document.getElementById("costos")
+document.addEventListener('DOMContentLoaded', async function () {
+  let dato = await getJSONData(info_carrito)
 
-function Carrito(array) {
-  let htmlContentToAppend = "";
-  for (let carts of array) {
-    htmlContentToAppend += `<table class="table"> <br>
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Costo</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">SubTotal</th>
-      </tr>
-    </thead>
-    <tbody>
-                <tr>
-                    <td><img src="${carts.image}" style="width: 65px; height: 40px;" class="img-fluid"</td>
-                    <td>${carts.name}</td>
-                    <td>${carts.currency}${carts.unitCost}</td>
-                    <td><input id="cant" oninput="subTotal(${carts.unitCost})"type="number" style="width:70px"></td>
-                    <td><b>${carts.currency}<span id="resultado">${carts.unitCost}</b></td>
-                </tr>
-            </table>
+  tabla.innerHTML = ""
+  tabla.innerHTML += `
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Costo</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Subtotal</th>
+  </tr>
+</thead>`
+  for (let articulos of dato.data.articles) {
+    tabla.innerHTML += `
+ <tbody>
+  <tr>
+    <th scope="row"><img style="width: 100px;" src="${articulos.image}" class="img-thumbnail"> </th>
+    <td>${articulos.name}</td>
+    <td>${articulos.currency} ${articulos.unitCost}</td>
+    <td>
+    <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
+    <td>${articulos.currency}<span id="subtotal">${articulos.unitCost} </span> </td>
+  </tr>
+  `
 
-    `
-   
-
-     costos.innerHTML += ` 
-   <ul class="list-group" >
+    costos.innerHTML += `
+   <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Subtotal del producto (U$D)
-    <span class="badge bg-primary rounded-pill" id="costos">${carts.unitCost}</span>
+    <span class="badge bg-primary rounded-pill" id="costoss">${articulos.unitCost}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Costo del envio (U$D)
@@ -55,44 +47,103 @@ function Carrito(array) {
     <span class="badge bg-primary rounded-pill" id="total"></span>
   </li>
 </ul>
-<br>
- `;
- 
+   `
   }
-  contenido.innerHTML = htmlContentToAppend;
-  
-}
  
-function subTotal(precio) {
-  let cant = document.getElementById("cant").value;
-  resultado = precio * cant;
-  return (document.getElementById("resultado").innerHTML = resultado);
-}
+  const envio = document.getElementById("envios")
 
-let envio = document.getElementById("envio");
-let opciones = document.getElementById("select");
-
-
-function calcular_envio() {
-  let subtotal = Number(document.getElementById("resultado").textContent)
-  let indice = opciones.selectedIndex
-  if (indice == 1)
-    envio.innerHTML = subtotal * 0.15
-  else if (indice == 2)
-    envio.innerHTML = subtotal * 0.07
-  else if (indice == 3)
-    envio.innerHTML = subtotal * 0.05
-}
+  function calcular_envio() {
+    let subtotal = Number(document.getElementById("subtotal").textContent)
+    let indice = opciones.selectedIndex
+    if (indice == 1)
+      envio.innerHTML = subtotal * 0.15
+    else if (indice == 2)
+      envio.innerHTML = subtotal * 0.07
+    else if (indice == 3)
+      envio.innerHTML = subtotal * 0.05
+  }
 
 
-opciones.addEventListener("click", () => {
-  calcular_envio();
-  sumar_total() 
+  opciones.addEventListener("click", () => {
+    calcular_envio();
+    sumar_total()
+  })
+
+  function sumar_total() {
+    let subtotal = Number(document.getElementById("subtotal").textContent)
+    const total = document.getElementById("total")
+    total.innerHTML = subtotal + Number(envio.textContent)
+  }
+
+
 })
 
-function sumar_total() {
-  let subtotal = Number(document.getElementById("subtotal").textContent)
-  const total = document.getElementById("total")
-  total.innerHTML = subtotal + Number(envio.textContent)
+
+function calcular_costo(parametro1, parametro2) {
+  let costoss = document.getElementById("costoss")
+  let subtotal = document.getElementById("subtotal");
+  subtotal.innerHTML = parametro1 * parametro2
+  costoss.innerHTML = parametro1 * parametro2
 }
 
+const opciones = document.getElementById("selector")
+
+
+
+const tarjeta = document.getElementById("flexRadioDefault1")
+const transferencia = document.getElementById("flexRadioDefault2")
+const numero_cuenta = document.getElementById("numero_cuenta")
+const numero_tarjeta = document.getElementById("numero_tarjeta")
+const codigo_seguridad = document.getElementById("codigo_seguridad")
+const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta")
+const boton_guardar = document.getElementById("boton_guardar")
+
+function chequear() {
+  if (tarjeta.checked) {
+    transferencia.disabled = true
+    numero_cuenta.disabled = true
+  } else if (transferencia.checked) {
+    tarjeta.disabled = true
+    numero_tarjeta.disabled = true
+    codigo_seguridad.disabled = true
+    vencimiento_tarjeta.disabled = true
+  }
+}
+const calle = document.getElementById("calle")
+const numero = document.getElementById("numero")
+const esquina = document.getElementById("esquina")
+const boton_comprar = document.getElementById("boton_comprar")
+function validad (){
+  indice = opciones.selectedIndex;
+  if( indice == null || indice == 0 ) {
+    return false;
+  }
+boton_comprar.addEventListener ("click", () => {
+validar()
+alert ("compra realizada con exito")
+})}
+
+
+
+(function () {
+  'use strict'
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  let forms = document.querySelectorAll('.needs-validation')
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+       
+        if (!form.checkValidity()) {
+         {
+          event.preventDefault()
+          event.stopPropagation()
+          }
+          
+        } 
+
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
