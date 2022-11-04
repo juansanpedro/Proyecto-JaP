@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <td>${articulos.currency} ${articulos.unitCost}</td>
     <td>
     <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
-    <td>${articulos.currency}<span id="subtotal">${articulos.unitCost} </span> </td>
+    <td><b>${articulos.currency}<span id="subtotal">${articulos.unitCost}</b> </span> </td>
   </tr>
   `
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   function calcular_envio() {
     let subtotal = Number(document.getElementById("subtotal").textContent)
-    let indice = opciones.selectedIndex
+    let indice = lista.selectedIndex
     if (indice == 1)
       envio.innerHTML = subtotal * 0.15
     else if (indice == 2)
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
 
-  opciones.addEventListener("click", () => {
+  lista.addEventListener("click", () => {
     calcular_envio();
     sumar_total()
   })
@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
 
+  
+
 })
 
 
@@ -86,7 +88,7 @@ function calcular_costo(parametro1, parametro2) {
   costoss.innerHTML = parametro1 * parametro2
 }
 
-const opciones = document.getElementById("selector")
+const lista = document.getElementById("selector")
 
 
 
@@ -109,17 +111,19 @@ function chequear() {
     vencimiento_tarjeta.disabled = true
   }
 }
+
 const calle = document.getElementById("calle")
 const numero = document.getElementById("numero")
 const esquina = document.getElementById("esquina")
 const boton_comprar = document.getElementById("boton_comprar")
+
 function validad (){
-  indice = opciones.selectedIndex;
+  indice = lista.selectedIndex;
   if( indice == null || indice == 0 ) {
     return false;
   }
 boton_comprar.addEventListener ("click", () => {
-validar()
+validad()
 alert ("compra realizada con exito")
 })}
 
