@@ -1,4 +1,4 @@
-const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json" //Realizar la Peticion 
 
 // getElementById necesarios
 const lista = document.getElementById("selector")
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     sumar_total()
   })
 
-  function sumar_total() {
-    let subtotal = Number(document.getElementById("subtotal").textContent)
+  function sumar_total() { 
+    let subtotal = Number(document.getElementById("subtotal").textContent) //contenido de texto de un nodo y sus dencendientes.
     const total = document.getElementById("total")
     total.innerHTML = subtotal + Number(envio.textContent)
   }
