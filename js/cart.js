@@ -43,15 +43,15 @@ document.addEventListener('DOMContentLoaded', async function () {
    <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Subtotal del producto (U$D)
-    <span class="badge bg-danger " id="costoss">${articulos.unitCost}</span>
+    <span class="badge bg-dark " id="costoss">${articulos.unitCost}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Costo del envio (U$D)
-    <span class="badge bg-danger " id="envios"></span>
+    <span class="badge bg-dark " id="envios"></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Total
-    <span class="badge bg-danger" id="total"></span>
+    <span class="badge bg-dark" id="total"></span>
   </li>
 </ul>
    `
