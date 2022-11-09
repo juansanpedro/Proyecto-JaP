@@ -82,7 +82,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     total.innerHTML = subtotal + Number(envio.textContent)
   }
 
-
+  boton_comprar.addEventListener ("click", () => {
+    validad()
+    alert ("compra realizada con exito")
+    })
   
 
 })
@@ -119,10 +122,8 @@ function validad (){
   if( indice == null || indice == 0 ) {
     return false;
   }
-boton_comprar.addEventListener ("click", () => {
-validad()
-alert ("compra realizada con exito")
-})}
+}
+  
 
 
 
