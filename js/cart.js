@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Subtotal del producto (U$D)
-    <span class="badge bg-dark " id="costoss">${articulos.unitCost}</span>
+   <span class="badge bg-dark " id="costoss">${articulos.unitCost}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Costo del envio (U$D)
@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 </ul>
    `
   }
+
+  
  
   const envio = document.getElementById("envios")
   
@@ -85,8 +87,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   boton_comprar.addEventListener ("click", () => {
-    validad()
-    alert ("Compra realizada con exito")
+    validar()
+    alert("Compra realizada con exito")
     })
   
 
@@ -121,7 +123,7 @@ const numero = document.getElementById("numero")
 const esquina = document.getElementById("esquina")
 const boton_comprar = document.getElementById("boton_comprar")
 
-function validad (){
+function validar (){
   indice = lista.selectedIndex;
   if( indice == null || indice == 0 ) {
     return false;
@@ -129,7 +131,7 @@ function validad (){
 }
   
 
-
+// funcion de validacion utilizada en la grupal 
 
 (function () {
   'use strict'
@@ -147,7 +149,6 @@ function validad (){
           }
           
         } 
-
 
         form.classList.add('was-validated')
       }, false)
