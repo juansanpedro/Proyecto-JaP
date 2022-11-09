@@ -58,8 +58,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
  
   const envio = document.getElementById("envios")
+  
+  // Calculando envio segun el %
 
-  function calcular_envio() {
+  function calcular_envio() { 
     let subtotal = Number(document.getElementById("subtotal").textContent)
     let indice = lista.selectedIndex
     if (indice == 1)
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   boton_comprar.addEventListener ("click", () => {
     validad()
-    alert ("compra realizada con exito")
+    alert ("Compra realizada con exito")
     })
   
 
@@ -99,6 +101,7 @@ function calcular_costo(parametro1, parametro2) {
 }
 
 
+// funcion chequear utilizada en el cart.html
 
 function chequear() {
   if (tarjeta.checked) {
@@ -111,6 +114,7 @@ function chequear() {
     vencimiento_tarjeta.disabled = true
   }
 }
+
 
 const calle = document.getElementById("calle")
 const numero = document.getElementById("numero")
