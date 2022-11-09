@@ -1,4 +1,4 @@
-const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json" //Realizar la Peticion 
+const carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json" //Realizar la Peticion 
 
 // getElementById necesarios
 const lista = document.getElementById("selector")
@@ -13,7 +13,7 @@ const boton_guardar = document.getElementById("boton_guardar")
 const tabla = document.getElementById("tabla")
 const costos = document.getElementById("costos")
 document.addEventListener('DOMContentLoaded', async function () {
-  let dato = await getJSONData(info_carrito)
+  let dato = await getJSONData(carrito)
 
   tabla.innerHTML = ""
   tabla.innerHTML += `
@@ -86,13 +86,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     total.innerHTML = subtotal + Number(envio.textContent)
   }
 
-  boton_comprar.addEventListener ("click", () => {
-    validar()
-    alert("Compra realizada con exito")
-    })
   
-
 })
+
 
 
 function calcular_costo(parametro1, parametro2) {
@@ -128,6 +124,12 @@ function validar (){
   if( indice == null || indice == 0 ) {
     return false;
   }
+
+  boton_comprar.addEventListener ("click", () => {
+    validar()
+    alert("Compra realizada con exito")
+    })
+
 }
   
 
