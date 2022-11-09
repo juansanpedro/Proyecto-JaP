@@ -144,7 +144,7 @@ function validar (){
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {
        
-        if (!form.checkValidity()) {
+        if (!form.checkValidity()|| validar()) {
          {
           event.preventDefault()
           event.stopPropagation()
