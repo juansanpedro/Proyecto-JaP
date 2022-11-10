@@ -123,8 +123,7 @@ function validar (){
   }
 
   boton_comprar.addEventListener ("click", () => {
-    validar()
-    alert("Compra realizada con exito")
+    validar();
     })
 
 }
