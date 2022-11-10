@@ -89,8 +89,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   
 })
 
-
-
 function calcular_costo(parametro1, parametro2) {
   let costoss = document.getElementById("costoss")
   let subtotal = document.getElementById("subtotal");
@@ -144,10 +142,11 @@ function validar (){
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {
        
-        if (!form.checkValidity()|| validar()) {
+        if (!form.checkValidity()) {
          {
           event.preventDefault()
           event.stopPropagation()
+
           }
           
         } 
