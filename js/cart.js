@@ -84,9 +84,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     total.innerHTML = subtotal + Number(envio.textContent)
   }
 
-  
 });
-
 
 
 function calcular_costo(parametro1, parametro2) {
