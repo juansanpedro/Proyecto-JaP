@@ -27,8 +27,6 @@ function validar(){
     }
 }
 
-
-
 let ingresar = document.getElementById("boton")   
 ingresar.addEventListener("click",function(){
     validar();

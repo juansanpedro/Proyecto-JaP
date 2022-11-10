@@ -13,6 +13,7 @@ const boton_guardar = document.getElementById("boton_guardar")
 
 const tabla = document.getElementById("tabla")
 const costos = document.getElementById("costos")
+
 document.addEventListener('DOMContentLoaded', async function () {
   let dato = await getJSONData(carrito)
 
