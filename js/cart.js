@@ -57,11 +57,10 @@ document.addEventListener('DOMContentLoaded', async function () {
    `
   }
 
-  
- 
   const envio = document.getElementById("envios")
   
   // Calculando envio segun el %
+   
 
   function calcular_envio() { 
     let subtotal = Number(document.getElementById("subtotal").textContent)
@@ -74,11 +73,11 @@ document.addEventListener('DOMContentLoaded', async function () {
       envio.innerHTML = subtotal * 0.05
   }
 
-
-  lista.addEventListener("click", () => {
+ lista.addEventListener("click", () => {
     calcular_envio();
     sumar_total()
   })
+  
 
   function sumar_total() { 
     let subtotal = Number(document.getElementById("subtotal").textContent) //
@@ -87,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   
-})
+});
 
 function calcular_costo(parametro1, parametro2) {
   let costoss = document.getElementById("costoss")
@@ -130,28 +129,47 @@ function validar (){
 
 }
   
-
 // funcion de validacion utilizada en la grupal 
 
 (function () {
-  'use strict'
+  "use strict";
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  let forms = document.querySelectorAll('.needs-validation')
+  let forms = document.querySelectorAll(".needs-validation");
   // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-       
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
         if (!form.checkValidity()) {
-         {
-          event.preventDefault()
-          event.stopPropagation()
+            event.stopPropagation();
+        }else{
+          showAlertSuccess()
+        }
 
-          }
-          
-        } 
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+//MENSAJES DE ERROR Y CONFIRMACIÓN
+function showAlertSuccess() {
+  document.getElementById("alert-success").classList.add("show");
+}
+
+function showAlertError() {
+  document.getElementById("alert-danger").classList.add("show");
+}
+
+//FUNCIONES COMPLEMENTARIAS DE 'ENVIAR REGISTRO'
+
+function verificarCampos() {
+  return calle.value.trim().length > 1 && esquina.value.trim().length > 1 && numero.value.trim().length > 1;
+}
+
+//FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
+function enviarRegistro() {
+  return (verificarCampos && check.checked) ? showAlertSuccess() : showAlertError();
+ }
