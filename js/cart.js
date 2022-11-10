@@ -105,16 +105,32 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    transferencia = true
-    numero_cuenta= true
+    
+    numero_tarjeta.disabled = false;
+    codigo_seguridad.disabled = false;
+    vencimiento_tarjeta.disabled = false;
+    numero_cuenta.required = false;
+    numero_cuenta.disabled = true;
+    numero_tarjeta.required = true;
+    codigo_seguridad.required = true;
+    vencimiento_tarjeta.required = true;
+
   } else if (transferencia.checked) {
-    tarjeta = true
-    numero_tarjeta= true
-    codigo_seguridad = true
-    vencimiento_tarjeta= true
+   
+
+    numero_cuenta.disabled = false;
+    numero_tarjeta.required = false;
+    codigo_seguridad.required = false;
+    vencimiento_tarjeta.required = false;
+    numero_cuenta.required = true;
+    numero_tarjeta.disabled = true;
+    codigo_seguridad.disabled = true;
+    vencimiento_tarjeta.disabled = true;
+
   }
 }
 
+ 
 
 const calle = document.getElementById("calle")
 const numero = document.getElementById("numero")
