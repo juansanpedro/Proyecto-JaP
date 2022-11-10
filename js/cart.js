@@ -10,6 +10,7 @@ const codigo_seguridad = document.getElementById("codigo_seguridad")
 const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta")
 const boton_guardar = document.getElementById("boton_guardar")
 
+
 const tabla = document.getElementById("tabla")
 const costos = document.getElementById("costos")
 document.addEventListener('DOMContentLoaded', async function () {
@@ -34,11 +35,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     <td>${articulos.name}</td>
     <td>${articulos.currency} ${articulos.unitCost}</td>
     <td>
-    <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
+    <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="10" id="input"></td>
     <td><b>${articulos.currency}<span id="subtotal">${articulos.unitCost}</b> </span> </td>
   </tr>
   `
-
     costos.innerHTML += `
    <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     calcular_envio();
     sumar_total()
   })
-  
 
   function sumar_total() { 
     let subtotal = Number(document.getElementById("subtotal").textContent) //
@@ -87,6 +86,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   
 });
+
+
 
 function calcular_costo(parametro1, parametro2) {
   let costoss = document.getElementById("costoss")
