@@ -74,8 +74,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       envio.innerHTML = subtotal * 0.05
   }
 
- lista.addEventListener("click", () => {
+ lista.addEventListener("click", () => {  // // se actualiza en precios con el selector
     calcular_envio();
+    sumar_total()
+  })
+
+  input.addEventListener("input", () => { // se actualiza en precios con el input
+    calcular_envio(); 
     sumar_total()
   })
 
