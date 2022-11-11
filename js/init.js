@@ -45,7 +45,7 @@ let getJSONData = function (url) {
 let storage = localStorage.getItem("usuario");
 let parrafo = document.getElementById("inicio");
 
-function removeLocalStorage() {
+function removeLocalStorage() { // Remove el id del localStorage
   localStorage.clear();
 }
 
