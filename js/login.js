@@ -30,6 +30,8 @@ ingresar.addEventListener("click",function(){
     validar();
 })
 
+
+
 const email = document.getElementById("email");
 const boton = document.getElementById("boton");
 
