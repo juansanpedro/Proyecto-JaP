@@ -1,5 +1,3 @@
-
-
 let alertae = document.getElementById("alertae");
 let alertac = document.getElementById("alertac");
 
@@ -34,6 +32,7 @@ ingresar.addEventListener("click",function(){
 
 const email = document.getElementById("email");
 const boton = document.getElementById("boton");
+
 
 boton.addEventListener("click", (evt) => {
   // Si tenemos texto ingresado en el input, lo guardamos en el localStorage
