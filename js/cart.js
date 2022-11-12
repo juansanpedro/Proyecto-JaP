@@ -60,18 +60,25 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   const envio = document.getElementById("envios")
   
-  // Calculando envio segun el %
+  //Funcion calcula el envio segun el %
    
 
   function calcular_envio() { 
-    let subtotal = Number(document.getElementById("subtotal").textContent)
-    let indice = lista.selectedIndex
+    let subtotal = Number(document.getElementById("subtotal").textContent) //interfaz el contenido de texto del nodo y sus descendientes
+    let indice = lista.selectedIndex  //devuelve el índice de la opción seleccionada en una lista desplegable
     if (indice == 1)
       envio.innerHTML = subtotal * 0.15
     else if (indice == 2)
       envio.innerHTML = subtotal * 0.07
     else if (indice == 3)
       envio.innerHTML = subtotal * 0.05
+  }
+
+
+  function sumar_total() { 
+    let subtotal = Number(document.getElementById("subtotal").textContent) //
+    const total = document.getElementById("total")
+    total.innerHTML = subtotal + Number(envio.textContent)
   }
 
  lista.addEventListener("click", () => {  // // se actualiza en precios con el selector
@@ -84,15 +91,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     sumar_total()
   })
 
-  function sumar_total() { 
-    let subtotal = Number(document.getElementById("subtotal").textContent) //
-    const total = document.getElementById("total")
-    total.innerHTML = subtotal + Number(envio.textContent)
-  }
+
+  
 
 });
 
 
+//entrega 5
 function calcular_costo(parametro1, parametro2) {
   let costoss = document.getElementById("costoss")
   let subtotal = document.getElementById("subtotal");
@@ -130,13 +135,13 @@ function chequear() {
   }
 }
 
- 
 
 const calle = document.getElementById("calle")
 const numero = document.getElementById("numero")
 const esquina = document.getElementById("esquina")
 const boton_comprar = document.getElementById("boton_comprar")
 
+//índice de la opción seleccionada en una lista desplegable
 function validar (){
   indice = lista.selectedIndex;
   if( indice == null || indice == 0 ) {
@@ -180,7 +185,7 @@ function showAlertSuccess() {
 }
 
 function showAlertError() {
-  document.getElementById("alert-danger").classList.add("show");
+  document.getElementById("alert-danger").classList.add("show"); //no utilizada
 }
 
 //FUNCIONES COMPLEMENTARIAS DE 'ENVIAR REGISTRO'
