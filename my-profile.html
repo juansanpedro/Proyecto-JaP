@@ -52,38 +52,48 @@
     </div>
   </nav>
   <main>
-    <div class="container">
+    <div class="container w-50">
       <br>
-      <h2 class="container">Perfil</h2>
-      <hr>
-      <br>
-      <form class="row gy-5 needs-validation" >
-        <div class="col-6">
-          <label for="validationCustom01" class="form-label"><b>Primer Nombre*</b></label>
-          <input type="text" class="container" id="nombre" value="" required>
+      <h2>Perfil</h2>
+
+    
+      <hr class="w-60">
+      <form class="row g-4 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Primer Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
+          
         </div>
-        <div class="col-6">
-          <label for="validationCustom01" class="form-label"><b>Segundo Nombre</b></label>
-          <input type="text" class="container" id="segundo_nombre" value="">
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Segundo Nombre</label>
+          <input type="text" class="form-control" id="segundo_nombre" required>
+          
         </div>
-        <div class="col-6">
-          <label for="validationCustom03" class="form-label"><b>Primer Apellido*</b></label>
-          <input type="text" class="container" id="segundo_apellido">   
+      
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Primer Apellido</label>
+          <input type="text" class="form-control" id="apellido" required>
+          
         </div>
-        <div class="col-6">
-          <label for="validationCustom03" class="form-label"><b>Segundo Apellido</b></label>
-          <input type="text" class="container" id="apellido">   
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Segundo Apellido</label>
+          <input type="text" class="form-control" id="segundo_apellido" required>
+          
         </div>
-        <div class="col-6">
-          <label for="validationCustom01" class="form-label"><b>Email</b></label>
-          <input type="text" class="container" id="emailPerfil" value="" required>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">E-mail</label>
+          <input type="text" class="form-control" id="emailPerfil" required>
+          
         </div>
-        <div class="col-6">
-          <label for="validationCustom03" class="form-label"><b>Telefono de contacto*</b></label>
-          <input type="number" class="container" id="telefono" required>   
+        
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Telofono de contacto</label>
+          <input type="text" class="form-control" id="telefono" required>
+          
         </div>
-        <hr>
-        <div class="btn"><button class="btn btn-dark" type="submit" id="boton_guardar"> Guardar Cambios</button>
+        
+        <div class="col-12">
+          <button class="btn btn-dark" type="submit">Guardar Cambios</button>
         </div>
          
        </form> 
