@@ -56,11 +56,12 @@ parrafo.innerHTML = `<div class="btn-group">
 <ul class="dropdown-menu">
   <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
   <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
-  <li ><a onclick="removeLocalStorage()" class="dropdown-item" href="index.html" >Cerrar Sesión</a></li>
+  <li><a id = "removeUsuario" class="dropdown-item" href="index.html" >Cerrar Sesión</a></li>
 </ul>
 </div>`;
 
 
-function removeLocalStorage() { // Remove el id del localStorage
-  localStorage.clear();
-}
+removeUsuario.addEventListener("click", function () {
+  //Creo dicha funcion para que al cerrar sesion, desaparezca usuario con el que me logee
+  localStorage.removeItem("usuario");
+});
