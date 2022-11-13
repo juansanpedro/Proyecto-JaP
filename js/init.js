@@ -46,9 +46,12 @@ let storage = localStorage.getItem("usuario");
 let parrafo = document.getElementById("inicio");
 
 // tengo que sacar esta funcion para que se guarden los datos cuando ingreso
+
+/*
 function removeLocalStorage() { // Remove el id del localStorage
   localStorage.clear();
 }
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
   let htmlContentToAppend = "";
