@@ -1,11 +1,11 @@
-const email = document.getElementById("email")
+const emailPerfil = document.getElementById("emailPerfil")
 const nombre = document.getElementById("nombre")
 const segundo_nombre = document.getElementById("segundo_nombre")
 const apellido = document.getElementById("apellido")
 const segundo_apellido = document.getElementById("segundo_apellido")
 const telefono = document.getElementById("telefono")
 
-email.value=localStorage.getItem("usuario");
+emailPerfil.value=localStorage.getItem("usuario");
 nombre.value=localStorage.getItem("nombre")
 segundo_nombre.value=localStorage.getItem("segundo_nombre")
 apellido.value=localStorage.getItem("apellido")
