@@ -44,7 +44,6 @@ let getJSONData = function (url) {
 
 
 
-// tengo que sacar esta funcion para que se guarden los datos cuando ingreso
 let storage = localStorage.getItem("usuario");
 let parrafo = document.getElementById("inicio");
 
