@@ -1,37 +1,36 @@
-const emailPerfil = document.getElementById("emailPerfil")
-const nombre = document.getElementById("nombre")
-const segundo_nombre = document.getElementById("segundo_nombre")
-const apellido = document.getElementById("apellido")
-const segundo_apellido = document.getElementById("segundo_apellido")
-const telefono = document.getElementById("telefono")
+const primerNombre = document.getElementById("primerNombre");
+const segundoNombre = document.getElementById("segundoNombre");
+const primerApellido = document.getElementById("primerApellido");
+const segundoApellido = document.getElementById("segundoApellido");
+const email = document.getElementById("email");
+const telefonoDeContacto = document.getElementById("telefonoDeContacto");
 
-emailPerfil.value=localStorage.getItem("usuario");
-nombre.value=localStorage.getItem("nombre")
-segundo_nombre.value=localStorage.getItem("segundo_nombre")
-apellido.value=localStorage.getItem("apellido")
-segundo_apellido.value=localStorage.getItem("segundo_apellido")
-telefono.value=localStorage.getItem("telefono")
+primerNombre.value = localStorage.getItem("primerNombre");
+segundoNombre.value = localStorage.getItem("segundoNombre");
+primerApellido.value = localStorage.getItem("primerApellido");
+segundoApellido.value = localStorage.getItem("segundoApellido");
+email.value = localStorage.getItem("usuario");
+telefonoDeContacto.value = localStorage.getItem("telefonoDeContacto");
 
+const validar = document.querySelectorAll(".needs-validation");
 
+validar.forEach((form) => {
+  form.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault();
+      localStorage.setItem("primerNombre", primerNombre.value);
+      localStorage.setItem("segundoNombre", segundoNombre.value);
+      localStorage.setItem("primerApellido", primerApellido.value);
+      localStorage.setItem("segundoApellido", segundoApellido.value);
+      localStorage.setItem("telefonoDeContacto", telefonoDeContacto.value);
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    forms.forEach(form => {
-      form.addEventListener('submit', event => {
-        event.preventDefault()
-        localStorage.setItem("nombre", nombre.value)
-        localStorage.setItem("segundo_nombre", segundo_nombre.value)
-        localStorage.setItem("apellido", apellido.value)
-        localStorage.setItem("segundo_apellido", segundo_apellido.value)
-        localStorage.setItem("telefono", telefono.value)
+      if (!form.checkValidity()) {
+        event.stopPropagation();
+      }
 
-        if (!form.checkValidity()) {
-          event.stopPropagation()
-          
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
+      form.classList.add("was-validated");
+    },
+    false
+  );
+});

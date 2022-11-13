@@ -52,49 +52,63 @@
     </div>
   </nav>
   <main>
-    <div class="container w-50">
-      <br>
-      <h2>Perfil</h2>
+    <div class="container">
+      <h3>Perfil</h3>
 
-    
-      <hr class="w-60">
-      <form class="row g-4 needs-validation" novalidate>
-        <div class="col-md-6">
-          <label for="validationCustom01" class="form-label">Primer Nombre*</label>
-          <input type="text" class="form-control" id="nombre" required>
-          
-        </div>
-        <div class="col-md-6">
-          <label for="validationCustom02" class="form-label">Segundo Nombre</label>
-          <input type="text" class="form-control" id="segundo_nombre" required>
-          
-        </div>
+      <br>
       
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Primer Apellido*</label>
-          <input type="text" class="form-control" id="apellido" required>
-          
+      <hr>
+
+      <form class="row g-4 needs-validation" novalidate>
+
+        <div class="col-5">
+          <label for="validationCustom01" class="formulario__label ">Primer nombre*</label>
+          <input type="text" class="form-control " id="primerNombre" required>
+          <div class="invalid-feedback">
+            Ingrese un nombre
+          </div>
         </div>
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Segundo Apellido</label>
-          <input type="text" class="form-control" id="segundo_apellido" required>
-          
+
+        <div class="col-5">
+          <label for="validationCustom02" class="formulario__label">Segundo nombre</label>
+          <input type="text" class="form-control" id="segundoNombre">
         </div>
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="emailPerfil" required>
-          
+
+        <div class="col-5">
+          <label for="validationCustom03" class="formulario__label">Primer apellido*</label>
+          <input type="text" class="form-control" id="primerApellido" required>
+          <div class="invalid-feedback">
+            Ingrese su primer apellido
+          </div>
         </div>
-        
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Telofono de contacto*</label>
-          <input type="number" class="form-control" id="telefono" required>
-          
+
+        <div class="col-5">
+          <label for="validationCustom04" class="formulario__label">Segundo apellido</label>
+          <input type="text" class="form-control" id="segundoApellido">
         </div>
-        
-        <div class="col-12">
-          <button class="btn btn-dark" type="submit">Guardar Cambios</button>
+
+        <div class="col-5">
+          <label for="validationCustom05" class="formulario__label">E-mail*</label>
+          <input type="text" class="form-control" id="email" required>
         </div>
+
+        <div class="col-5">
+          <label for="validationCustom06" class="formulario__label">Teléfono de contacto</label>
+          <input type="text" class="form-control" id="telefonoDeContacto">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <hr>
+
+        <button class="btn btn-dark col-2" type="submit">Guardar Cambios</button>
+    </div>
          
        </form> 
      
