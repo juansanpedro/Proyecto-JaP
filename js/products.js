@@ -123,6 +123,33 @@ limpiar.addEventListener("click", function(){
     productos();
 });
 
+//desafiate 4
+
+let searchValue = document.getElementById("searchValue");
+let btnSearch = document.getElementById("search");
+
+btnSearch.addEventListener("click", () => {
+  let search = searchValue.value;
+  if (!search) return alert("El campo de busqueda esta vacio!");
+  productosRelacionados = [];
+  for (let i = 0; i < element.length; i++) {
+    let name = element[i].name;
+    let description = element[i].description;
+
+    //el includes está para que se fije si el título INCLUYE la busqueda, porque puede ser solo una parte del título
+
+    if (
+      name.toLowerCase().includes(search) ||
+      description.toLowerCase().includes(search)
+    )
+      productosRelacionados.push(array[i]);
+  }
+  ;
+  elementsProducts(productosRelacionados);
+});
+
+
+
 function setProductID(id) {
   localStorage.setItem("productID", id);
   window.location = "product-info.html"
